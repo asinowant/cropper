@@ -3,7 +3,7 @@
        <view style='width: 100vw;height: 100vh;position: fixed;left: 0;top: 0;background-image: url("{{mask}}");'></view>
        <view class="crop-head" style="{{head_style}}">
               <view class="crop-btn" catchtap="{{crop.onCrop}}" hover-class="crop-hover" id="confirm">
-                     <image src="./icons/tick.svg"></image>
+                     <image src="./tick.svg"></image>
               </view>
               <view class="crop-btn" catchtap="{{crop.onCrop}}" hover-class="crop-hover" id="preview">
                      预览
