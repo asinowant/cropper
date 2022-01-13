@@ -1,0 +1,19 @@
+<wxs module="crop" src="./index.wxs"></wxs>
+<view class="crop-body" init="{{initData}}" change:init="{{crop.init}}">
+       <view style='width: 100vw;height: 100vh;position: fixed;left: 0;top: 0;background-image: url("{{mask}}");'></view>
+       <view class="crop-head" style="{{head_style}}">
+              <view class="crop-btn" catchtap="{{crop.onCrop}}" hover-class="crop-hover" id="confirm">
+                     <image src="./icons/tick.svg"></image>
+              </view>
+              <view class="crop-btn" catchtap="{{crop.onCrop}}" hover-class="crop-hover" id="preview">
+                     预览
+              </view>
+              <view class="crop-btn" catchtap="{{crop.setRotation}}" hover-class="crop-hover">旋转
+              </view>
+              <view class="crop-btn" catchtap="{{crop.setTheme}}" hover-class="crop-hover">背景</view>
+       </view>
+       <image src="{{path}}" id="crop_img" class="crop-img" style="{{img_style}}">
+       </image>
+       <canvas type="2d" canvas-id="cropper" id="cropper" disable-scroll style="{{crop_style}}"></canvas>
+       <canvas type="2d" class="crop-mask" canvas-id="mask" id="mask" disable-scroll catchtouchstart="{{crop.cropTouch}}" catchtouchmove="{{crop.cropTouch}}" catchtouchend="{{crop.cropTouch}}" catchtouchcancel="{{crop.cropTouch}}"></canvas>
+</view>
